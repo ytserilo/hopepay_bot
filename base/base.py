@@ -7,7 +7,7 @@ from telegram.message_controller import MessageController
 from .postal_manager import *
 
 
-new_link = "https://hopepaybot.herokuapp.com/"
+new_link = "your link"
 
 app = Flask(__name__, template_folder='templates')
 sslify = SSLify(app)
@@ -16,8 +16,8 @@ redis_url = os.getenv('REDISTOGO_URL', 'redis://localhost')
 redis_storage = redis.from_url(redis_url)
 
 
-public_key = "sandbox_i50128638989"
-private_key = "sandbox_WVoulgJClKaLoOZarwQH7W2hBqBjW25yuk66w6mU"
+public_key = "key"
+private_key = "key"
 
 class BaseMassanger(ABC):
     def get_orders(self, user_id, mode):
@@ -199,7 +199,7 @@ def get_card_token():
 
         redis_storage.set(user_id[0], json.dumps(user_info))
 
-        link = "https://api.telegram.org/bot1054709988:AAE4Ia3q24vPjo5CvkuYD5zOzY8VuV117kw/sendMessage"
+        link = "https://api.telegram.org/<bot key>/sendMessage"
         data = {
             "text": "Будь ласка відправте назву товара",
             "chat_id": user_id[0]
