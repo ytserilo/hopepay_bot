@@ -6,7 +6,7 @@ import requests, json
 class NewPostal:
     def create_agent(self, data, mode):
         emitent_data = {
-            "apiKey": "5c91a4239f54889de26a9a4a29698f16",
+            "apiKey": "<new postal key>",
             "modelName": "Counterparty",
             "calledMethod": "save",
             "methodProperties": {
@@ -35,7 +35,7 @@ class NewPostal:
 
 
                 data = {
-                    "apiKey": "5c91a4239f54889de26a9a4a29698f16",
+                    "apiKey": "<new postal key>",
                     "modelName": "TrackingDocument",
                     "calledMethod": "getStatusDocuments",
                     "methodProperties": {
