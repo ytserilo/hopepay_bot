@@ -2,7 +2,7 @@ import requests, json
 
 class MessageController:
     def send_or_update_message(self, mode, data):
-        link = "https://api.telegram.org/bot1054709988:AAE4Ia3q24vPjo5CvkuYD5zOzY8VuV117kw/{}"
+        link = "https://api.telegram.org/<bot key>/{}"
         if mode == "media":
             response = requests.post(link.format("editMessageMedia"), json=data)
         else:
@@ -30,11 +30,11 @@ class MessageController:
             data["parse_mode"] = "HTML"
 
 
-        link = "https://api.telegram.org/bot1054709988:AAE4Ia3q24vPjo5CvkuYD5zOzY8VuV117kw/sendMessage"
+        link = "https://api.telegram.org/<bot key>/sendMessage"
         response = requests.post(link, json=data)
         response_data = json.loads(response.text)
         
 
     def send_update(self, data):
-        link = "https://api.telegram.org/bot1054709988:AAE4Ia3q24vPjo5CvkuYD5zOzY8VuV117kw/editMessageText"
+        link = "https://api.telegram.org/<bot key>/editMessageText"
         response = requests.post(link, json=data)
