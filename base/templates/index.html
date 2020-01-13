@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="html">
+      {% if html %}
+        {{ html }}
+      {% endif %}
+    </div>
+    {% if error %}
+      <h1 style="color: red;">{{ error }}, Создайте новую ссылку для тестового платежа</h1>
+    {% endif %}
+    <script type="text/javascript">
+      var div = document.getElementById('html');
+      div.innerHTML = div.textContent;
+    </script>
+  </body>
+</html>
